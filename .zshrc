@@ -38,4 +38,4 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR="subl -w"
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
-PATH=$PATH:/Applications:$HOME/.rvm/bin:$HOME/bin # Add RVM to PATH for scripting
+PATH=/usr/local/bin:$PATH:/Applications:$HOME/.rvm/bin:$HOME/bin # Add RVM to PATH for scripting
