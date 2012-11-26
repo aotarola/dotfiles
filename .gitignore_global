@@ -8,3 +8,4 @@
 *.gz
 *.sublime-project
 *.sublime-workspace
+*.pyc

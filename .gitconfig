@@ -1,5 +1,5 @@
 [user]
-	name = Andrés Otárola Alvarado
+	name = Andrés Otárola
 	email = andres@otarola.me
 [core]
 	excludesfile = /Users/aotarola/.gitignore_global
@@ -19,4 +19,4 @@
 	cmd = "diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$(if test -f \"$BASE\"; then echo \"$BASE\"; else echo \"$LOCAL\"; fi)\" \"$REMOTE\""
 	trustExitCode = true
 [push]
-	default = simple
+	default = matching
