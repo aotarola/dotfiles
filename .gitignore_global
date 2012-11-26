@@ -1,0 +1,10 @@
+*~
+.DS_Store
+*.log
+*.pdf
+*.orig
+*.fls
+*.fdb_latexmk
+*.gz
+*.sublime-project
+*.sublime-workspace
