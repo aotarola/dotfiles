@@ -1,3 +1,4 @@
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -38,7 +39,7 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR="subl -w"
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
-PATH=/usr/local/bin:$PATH:/Applications:$HOME/.rvm/bin:$HOME/bin # Add RVM to PATH for scripting
+PATH=/usr/local/bin:$HOME/.rbenv/bin:$PATH:/Applications:$HOME/.rvm/bin:$HOME/bin # Add RVM to PATH for scripting
 
 # Aliases for git
 alias gh='git hist'
