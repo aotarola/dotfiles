@@ -66,3 +66,10 @@ alias gpso='git push origin'
 alias mb='gbr | grep andres | sed -e "s@origin/@@"'
 alias gmd='git m devel'
 alias gbu='gbr | sed -e "s@origin/@@" | grep -v grep | grep $@'
+#Aliases for bundler
+alias b="bundle"
+alias bi="b install --path vendor"
+alias bil="bi --local"
+alias bu="b update"
+alias be="b exec"
+alias binit="bi && b package && echo 'vendor/ruby' >> .gitignore"
