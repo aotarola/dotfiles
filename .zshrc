@@ -7,7 +7,7 @@ ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="robbyrussell"
-
+DISABLE_AUTO_TITLE=true
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
@@ -35,12 +35,14 @@ plugins=(git ruby)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-#export PATH=~/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$HOME/bin:/opt/local/bin:$PATH
 export EDITOR="subl -w"
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
-PATH=/usr/local/bin:$HOME/.rbenv/bin:$PATH:/Applications:$HOME/.rvm/bin:$HOME/bin # Add RVM to PATH for scripting
-
+export PATH=/usr/local/share/python:$HOME/android-sdk/tools:$HOME/android-sdk/platform-tools:/usr/local/bin:$HOME/.rbenv/bin:$PATH:/Applications:$HOME/.rvm/bin:$HOME/bin # Add RVM to PATH for scripting
+#export PYTHONPATH=/usr/local/lib/python2.7/site-packages
+# Aliases for tmux
+alias tmus='tmux'
+alias tm='tmux'
 # Aliases for git
 alias gh='git hist'
 alias gs='git st '
@@ -75,3 +77,6 @@ alias be="b exec"
 alias binit="bi && b package && echo 'vendor/ruby' >> .gitignore"
 #Aliases for sublime
 alias pc="open $HOME/Library/Application\ Support/Sublime\ Text\ 2/Packages"
+
+export android_sdk=/Users/aotarola/android-sdk
+export JAVA_HOME=$(/usr/libexec/java_home)
