@@ -1,10 +1,10 @@
 syntax on
-# Disable cursor keys in normal mode
+" Disable cursor keys in normal mode
 nnoremap <Left>  <NOP>
 nnoremap <Right> <NOP>
 nnoremap <Up>    <NOP>
 nnoremap <Down>  <NOP>
-# Disable cursor keys in intert mode
+" Disable cursor keys in insert mode
 inoremap <Left>  <NOP>
 inoremap <Right> <NOP>
 inoremap <Up>    <NOP>
