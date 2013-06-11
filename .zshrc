@@ -43,6 +43,7 @@ export PATH=/usr/local/share/python:$HOME/android-sdk/tools:$HOME/android-sdk/pl
 # Aliases for tmux
 alias tmus='tmux'
 alias tm='tmux'
+alias tx='tmux'
 # Aliases for git
 alias gh='git hist'
 alias gs='git st '
