@@ -1,35 +1,21 @@
 [user]
-	name = Andrés Otárola
-	email = andres@otarola.me
-[core]
-	excludesfile = /Users/aotarola/.gitignore_global
-        whitespace= fix,-indent-with-non-tab,trailing-space,cr-at-eol
+  name = Andrés Otárola
+  email = andres@otarola.me
 [color]
-        ui = auto
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
-[diff]
-	tool = diffmerge
-[difftool "diffmerge"]
-	cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
-[merge]
-	tool = diffmerge
-[mergetool "diffmerge"]
-	cmd = "diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$(if test -f \"$BASE\"; then echo \"$BASE\"; else echo \"$LOCAL\"; fi)\" \"$REMOTE\""
-	trustExitCode = true
-[push]
-	default = simple
+  ui = true
+  branch = true
+  diff = true
+  status = true
 [alias]
-    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-        m = merge --no-ff
-        pr = remote prune origin
-        st = status
-        br = branch
-        type = cat-file -t
-        dump = cat-file -p
-        co = checkout
-        ci = commit
+  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  m = merge --no-ff
+  pr = remote prune origin
+  s = status
+  br = branch
+  type = cat-file -t
+  dump = cat-file -p
+  ci = commit
+  save = stash save
+  pop = stash pop --index
+  rh = reset --hard
+  ls = branch -a
