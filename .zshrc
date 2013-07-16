@@ -38,36 +38,31 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR="subl -w"
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
-export PATH=/usr/local/share/python:$HOME/android-sdk/tools:$HOME/android-sdk/platform-tools:/usr/local/bin:$HOME/.rbenv/bin:$PATH:/Applications:$HOME/.rvm/bin:$HOME/bin # Add RVM to PATH for scripting
-#export PYTHONPATH=/usr/local/lib/python2.7/site-packages
+export PATH=$HOME/bin:/usr/local/share/python:/usr/local/bin:$HOME/.rbenv/bin:/Applications:$PATH
 # Aliases for tmux
 alias tmus='tmux'
 alias tm='tmux'
 alias tx='tmux'
 # Aliases for git
 alias gh='git hist'
-alias gs='git st '
+alias gs='git s'
 alias ga='git add '
 alias gb='git br'
 alias gba='git br -a'
 alias gbr='git br -r'
-alias gc='git ci'
+alias gc='git commit'
 alias gca='git ci -a'
 alias gd='git diff'
-alias go='git co '
-alias gob='git co -b'
+alias go='git checkout'
+alias gob='git checkout -b'
 alias gbd='git branch -d'
 alias gbD='git branch -D'
 alias gk='gitk --all&'
 alias gx='gitx --all'
 alias got='git '
 alias get='git '
-alias gme='git m'
 alias gpr='git pr'
-alias gplo='git pull origin'
-alias gpso='git push origin'
 alias mb='gbr | grep andres | sed -e "s@origin/@@"'
-alias gmd='git m devel'
 alias gbu='gbr | sed -e "s@origin/@@" | grep -v grep | grep $@'
 #Aliases for bundler
 alias b="bundle"
@@ -79,5 +74,4 @@ alias binit="bi && b package && echo 'vendor/ruby' >> .gitignore"
 #Aliases for sublime
 alias pc="open $HOME/Library/Application\ Support/Sublime\ Text\ 2/Packages"
 
-export android_sdk=/Users/aotarola/android-sdk
 export JAVA_HOME=$(/usr/libexec/java_home)
