@@ -1,21 +1,8 @@
 [user]
-  name = Andrés Otárola
+  name = Andres Otarola
   email = andres@otarola.me
-[color]
-  ui = true
-  branch = true
-  diff = true
-  status = true
+[core]
+  editor = nvim
+  excludesfile = ~/.gitignore
 [alias]
-  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-  m = merge --no-ff
-  pr = remote prune origin
-  s = status
-  br = branch
-  type = cat-file -t
-  dump = cat-file -p
-  ci = commit
-  save = stash save
-  pop = stash pop --index
-  rh = reset --hard
-  ls = branch -a
+  amend = commit -a --amend --no-edit
