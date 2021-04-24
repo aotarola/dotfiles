@@ -9,3 +9,6 @@
 *.sublime-project
 *.sublime-workspace
 *.pyc
+.vscode/
+.vim/
+.vimspector.json
