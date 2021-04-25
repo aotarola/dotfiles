@@ -1,0 +1,33 @@
+# just a comment fff
+window:
+  decorations: buttonless
+font:
+  normal:
+    family: JetBrainsMono Nerd Font
+    style: Regular
+
+  italic:
+    family: JetBrainsMono Nerd Font
+    style: Italic
+
+  bold:
+    family: JetBrainsMono Nerd Font
+    style: Bold
+
+  size: 15.0
+
+  use_thin_strokes: false
+
+draw_bold_text_with_bright_colors: true
+
+debug:
+  render_timer: false
+
+background_opacity: 0.95
+
+hide_cursor_when_typing: true
+
+shell:
+  program: /bin/zsh
+  args:
+    - --login
