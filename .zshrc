@@ -9,14 +9,17 @@ plugins=(
   vi-mode # I need vim everywhere 🤷
 )
 
-source $ZSH/oh-my-zsh.sh
 
+source $ZSH/oh-my-zsh.sh
 
 # ZSH 3rd party plugins
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/local/opt/fzf/shell/key-bindings.zsh
 source /usr/local/opt/fzf/shell/completion.zsh
+
+# Some tweaks to some of the plugins
+
 bindkey '  ' autosuggest-accept
 
 # Enable nvm
@@ -30,7 +33,6 @@ eval "$(pyenv virtualenv-init -)"
 
 
 # Aliases, AKA: expressing my lazyness
-
 
 alias go="git checkout"
 alias gs="git status"
@@ -60,9 +62,14 @@ alias oldvim="vim"
 alias hh="history | fzf"
 alias z="v ~/.zshrc"
 alias ncf="npx nap --cloud deploy:configs"
+alias s="source ~/.zshrc"
 
 # Enable a ruby version from rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
+
+# Enable rust
+export PATH="$HOME/.cargo/bin:$PATH"
+
 eval "$(rbenv init -)"
 
 if (( $+commands[thefuck] )) ; then
@@ -74,3 +81,7 @@ fi
 
 # Setting a better jdk
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
+
+# Godly overrides from my home
+
+export PATH="$HOME/.bin:$PATH"
