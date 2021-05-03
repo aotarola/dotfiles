@@ -18,7 +18,7 @@ source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/local/opt/fzf/shell/key-bindings.zsh
 source /usr/local/opt/fzf/shell/completion.zsh
 
-# Some tweaks to some of the plugins
+# Tweaking plugins
 
 bindkey '  ' autosuggest-accept
 
@@ -63,6 +63,7 @@ alias hh="history | fzf"
 alias z="v ~/.zshrc"
 alias ncf="npx nap --cloud deploy:configs"
 alias s="source ~/.zshrc"
+alias t="v ~/.tmux.conf"
 
 # Enable a ruby version from rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
