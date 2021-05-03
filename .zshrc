@@ -9,7 +9,6 @@ plugins=(
   vi-mode # I need vim everywhere 🤷
 )
 
-
 source $ZSH/oh-my-zsh.sh
 
 # ZSH 3rd party plugins
@@ -21,16 +20,6 @@ source /usr/local/opt/fzf/shell/completion.zsh
 # Tweaking plugins
 
 bindkey '  ' autosuggest-accept
-
-# Enable nvm
-export NVM_DIR="$HOME/.nvm"
-  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-
-export PATH="$HOME/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-
 
 # Aliases, AKA: expressing my lazyness
 
@@ -65,24 +54,31 @@ alias ncf="npx nap --cloud deploy:configs"
 alias s="source ~/.zshrc"
 alias t="v ~/.tmux.conf"
 
-# Enable a ruby version from rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
+# PATH customization
 
-# Enable rust
-export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.pyenv/bin:$PATH" # enable pyenv
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
+export PATH="$HOME/.rbenv/bin:$PATH" # enable rbenv
 eval "$(rbenv init -)"
+
+export PATH="$HOME/.cargo/bin:$PATH" # enable rust
+
+export PATH="/usr/local/opt/openjdk/bin:$PATH" # setting a better jdk
+
+export PATH="$HOME/.bin:$PATH" # godly overrides from my home
+
+# Configure thefuck
 
 if (( $+commands[thefuck] )) ; then
 
-eval $(thefuck --alias f)
+eval $(thefuck --alias f) # enables the polite form: 'f'
 else
   echo "did not find thefuck ?"
 fi
 
-# Setting a better jdk
-export PATH="/usr/local/opt/openjdk/bin:$PATH"
-
-# Godly overrides from my home
-
-export PATH="$HOME/.bin:$PATH"
+# Configure nvm
+export NVM_DIR="$HOME/.nvm"
+  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
