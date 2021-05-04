@@ -2,15 +2,15 @@ window:
   decorations: buttonless
 font:
   normal:
-    family: FiraMono Nerd Font Mono
+    family: DankMono Nerd Font
     style: Regular
 
   italic:
-    family: FiraMono Nerd Font Mono
-    style: Medium
+    family: DankMono Nerd Font
+    style: Italic
 
   bold:
-    family: FiraMono Nerd Font Mono
+    family: DankMono Nerd Font
     style: Bold
 
   size: 17.0
