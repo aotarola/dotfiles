@@ -1,6 +1,6 @@
 export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_THEME="agnoster"
+ZSH_THEME="muse"
 
 # ZSH Built-in plugins
 plugins=(
@@ -49,10 +49,11 @@ alias vim="nvim"
 alias vi="nvim"
 alias oldvim="vim"
 alias hh="history | fzf"
-alias z="v ~/.zshrc"
 alias ncf="npx nap --cloud deploy:configs"
 alias s="source ~/.zshrc"
 alias t="v ~/.tmux.conf"
+alias z="v ~/.zshrc"
+alias a="v ~/.alacritty.yml"
 
 # PATH customization
 
