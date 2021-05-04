@@ -1,6 +1,6 @@
 export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_THEME="muse"
+ZSH_THEME="spaceship"
 
 # ZSH Built-in plugins
 plugins=(
@@ -21,7 +21,7 @@ source /usr/local/opt/fzf/shell/completion.zsh
 
 bindkey '  ' autosuggest-accept
 
-# Aliases, AKA: expressing my lazyness
+# Aliases, AKA: expressing my laziness
 
 alias go="git checkout"
 alias gs="git status"

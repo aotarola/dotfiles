@@ -4,7 +4,7 @@ git pull
 function doIt() {
 	for file in $(find . -not -path '\.' -not -path '*/\.*' -not -name 'README.md' -not -name '*.sh' -exec basename {} \;)
 	do
-	 cp $file ~/.$file
+		ln -s $(pwd)/$file ~/.$file
 	done
 }
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
