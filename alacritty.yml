@@ -1,8 +1,5 @@
 window:
   decorations: buttonless
-  padding:
-    x: 5
-    y: 5
 mouse:
   hide_when_typing: true
 font:
