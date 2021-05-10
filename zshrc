@@ -23,7 +23,7 @@ bindkey '  ' autosuggest-accept
 
 # Aliases, AKA: expressing my laziness
 
-alias go="git checkout"
+alias gco="git checkout"
 alias gs="git status"
 alias gws="git wf start"
 alias gwd="git wf done"
