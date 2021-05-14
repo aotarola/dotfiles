@@ -54,6 +54,7 @@ alias s="source ~/.zshrc"
 alias t="v ~/.tmux.conf"
 alias z="v ~/.zshrc"
 alias a="v ~/.alacritty.yml"
+alias remove_lvim="rm -rf ~/.config/nvim && rm -rf ~/.local/share/nvim && rm -rf ~/.cache/nvim"
 
 # PATH customization
 
@@ -68,7 +69,7 @@ export PATH="$HOME/.cargo/bin:$PATH" # enable rust
 
 export PATH="/usr/local/opt/openjdk/bin:$PATH" # setting a better jdk
 
-export PATH="$HOME/.bin:$PATH" # godly overrides from my home
+export PATH="$HOME/.local/bin:$PATH" # godly overrides from my home
 
 # Configure thefuck
 
