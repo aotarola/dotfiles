@@ -55,7 +55,7 @@ alias t="v ~/.tmux.conf"
 alias z="v ~/.zshrc"
 alias a="v ~/.alacritty.yml"
 alias remove_lvim="rm -rf ~/.config/nvim && rm -rf ~/.local/share/nvim && rm -rf ~/.cache/nvim"
-
+alias pack_plugins="/Users/aotarola/.local/share/nvim/site/pack/packer/opt"
 # PATH customization
 
 export PATH="$HOME/.pyenv/bin:$PATH" # enable pyenv
