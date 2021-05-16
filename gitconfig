@@ -6,3 +6,9 @@
   excludesfile = ~/.gitignore
 [alias]
   amend = commit -a --amend --no-edit
+[pull]
+	rebase = true
+[fetch]
+	prune = true
+[diff]
+	colorMoved = zebra
