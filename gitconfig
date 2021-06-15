@@ -6,9 +6,12 @@
   excludesfile = ~/.gitignore
 [alias]
   amend = commit -a --amend --no-edit
+  r = remote --verbose
 [pull]
-	rebase = true
+  rebase = true
 [fetch]
-	prune = true
+  prune = true
 [diff]
-	colorMoved = zebra
+  colorMoved = zebra
+[init]
+  defaultBranch = main

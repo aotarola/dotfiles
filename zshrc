@@ -42,6 +42,7 @@ alias b="brew"
 alias bi="brew install"
 alias k="kubectl"
 alias kx="kubectx"
+alias ks="kubens"
 alias v="nvim"
 alias n="node"
 alias vim="nvim"
@@ -55,7 +56,8 @@ alias t="v ~/.tmux.conf"
 alias z="v ~/.zshrc"
 alias a="v ~/.alacritty.yml"
 alias remove_lvim="rm -rf ~/.config/nvim && rm -rf ~/.local/share/nvim && rm -rf ~/.cache/nvim"
-alias pack_plugins="/Users/aotarola/.local/share/nvim/site/pack/packer/opt"
+alias pack_plugins="$HOME/.local/share/nvim/site/pack/packer/opt"
+alias drun="docker run --rm -it"
 # PATH customization
 
 export PATH="$HOME/.pyenv/bin:$PATH" # enable pyenv
