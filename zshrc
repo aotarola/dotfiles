@@ -58,6 +58,9 @@ alias a="v ~/.alacritty.yml"
 alias remove_lvim="rm -rf ~/.config/nvim && rm -rf ~/.local/share/nvim && rm -rf ~/.cache/nvim"
 alias pack_plugins="$HOME/.local/share/nvim/site/pack/packer/opt"
 alias drun="docker run --rm -it"
+alias cod="conda deactivate"
+alias coa="conda activate"
+alias ccat="pygmentize -g"
 # PATH customization
 
 export PATH="$HOME/.rbenv/bin:$PATH" # enable rbenv
@@ -85,7 +88,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('$HOME/.miniconda/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$("$HOME/.miniconda/bin/conda" 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
