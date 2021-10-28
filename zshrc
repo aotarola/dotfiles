@@ -61,43 +61,13 @@ alias drun="docker run --rm -it"
 alias cod="conda deactivate"
 alias coa="conda activate"
 alias ccat="pygmentize -g"
+# Export env vars
+eval "$(fnm env)"
 # PATH customization
-
-export PATH="$HOME/.rbenv/bin:$PATH" # enable rbenv
-eval "$(rbenv init -)"
 
 export PATH="$HOME/.cargo/bin:$PATH" # enable rust
 
 export PATH="/usr/local/opt/openjdk/bin:$PATH" # setting a better jdk
 
 export PATH="$HOME/.local/bin:$PATH" # godly overrides from my home
-
-# Configure thefuck
-
-if (( $+commands[thefuck] )) ; then
-
-eval $(thefuck --alias f) # enables the polite form: 'f'
-else
-  echo "did not find thefuck ?"
-fi
-
-# Configure nvm
-export NVM_DIR="$HOME/.nvm"
-  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$("$HOME/.miniconda/bin/conda" 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "$HOME/.miniconda/etc/profile.d/conda.sh" ]; then
-        . "$HOME/.miniconda/etc/profile.d/conda.sh"
-    else
-        export PATH="$HOME/.miniconda/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
 
