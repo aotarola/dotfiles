@@ -32,7 +32,7 @@ alias gwa="git wf abort"
 alias gpf="git push fork"
 alias gob="git checkout -b"
 alias gu="git up"
-alias nu="nvm use"
+alias nu="fnm use"
 alias ns="npm start"
 alias nci="npm ci"
 alias nt="npm t"
@@ -61,8 +61,10 @@ alias drun="docker run --rm -it"
 alias cod="conda deactivate"
 alias coa="conda activate"
 alias ccat="pygmentize -g"
+
 # Export env vars
 eval "$(fnm env)"
+
 # PATH customization
 
 export PATH="$HOME/.cargo/bin:$PATH" # enable rust
