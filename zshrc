@@ -1,6 +1,10 @@
 export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_THEME="spaceship"
+fpath+=$HOME/.zsh/pure
+ZSH_THEME=""
+
+autoload -U promptinit; promptinit
+prompt pure
 
 # ZSH Built-in plugins
 plugins=(
@@ -12,14 +16,14 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # ZSH 3rd party plugins
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/local/opt/fzf/shell/key-bindings.zsh
 source /usr/local/opt/fzf/shell/completion.zsh
 
 # Tweaking plugins
 
-bindkey '  ' autosuggest-accept
+# bindkey '  ' autosuggest-accept
 
 # Aliases, AKA: expressing my laziness
 
@@ -73,3 +77,4 @@ export PATH="/usr/local/opt/openjdk/bin:$PATH" # setting a better jdk
 
 export PATH="$HOME/.local/bin:$PATH" # godly overrides from my home
 
+eval "$(rbenv init - zsh)"
