@@ -75,6 +75,8 @@ export PATH="$HOME/.cargo/bin:$PATH" # enable rust
 
 export PATH="/usr/local/opt/openjdk/bin:$PATH" # setting a better jdk
 
+export PATH="$(pyenv root)/shims:/usr/local/bin:/usr/bin:/bin:$PATH"
+
 export PATH="$HOME/.local/bin:$PATH" # godly overrides from my home
 
 eval "$(rbenv init - zsh)"
