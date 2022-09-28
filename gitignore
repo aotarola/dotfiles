@@ -12,3 +12,4 @@
 .vscode/
 .vim/
 .vimspector.json
+.marksman.toml

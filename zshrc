@@ -41,6 +41,7 @@ alias ns="npm start"
 alias nci="npm ci"
 alias nt="npm t"
 alias nr="npm run"
+alias na="npm run assets"
 alias ng="npm init @grpn"
 alias b="brew"
 alias bi="brew install"
@@ -55,17 +56,20 @@ alias hh="history | fzf"
 alias ncf="npx nap --cloud deploy:configs"
 alias vim="v"
 alias vi="v"
+alias h="hx"
+alias hg="hx"
 alias s="source ~/.zshrc"
 alias t="v ~/.tmux.conf"
 alias z="v ~/.zshrc"
 alias a="v ~/.alacritty.yml"
+alias nig="npm init @grpn"
 alias remove_lvim="rm -rf ~/.config/lvim/plugin && rm -rf ~/.local/share/lunarvim && rm -rf ~/.cache/nvim"
 alias pack_plugins="$HOME/.local/share/nvim/site/pack/packer/opt"
 alias drun="docker run --rm -it"
 alias cod="conda deactivate"
 alias coa="conda activate"
 alias ccat="pygmentize -g"
-
+alias npv="node -v && npm -v"
 # Export env vars
 eval "$(fnm env)"
 
@@ -80,3 +84,6 @@ export PATH="$(pyenv root)/shims:/usr/local/bin:/usr/bin:/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH" # godly overrides from my home
 
 eval "$(rbenv init - zsh)"
+
+# . /usr/local/opt/asdf/libexec/asdf.sh
+export PATH="/usr/local/sbin:$PATH"

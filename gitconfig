@@ -2,7 +2,7 @@
   name = Andres Otarola
   email = andres@otarola.me
 [core]
-  editor = lvim
+  editor = hx
   excludesfile = ~/.gitignore
 [alias]
   amend = commit -a --amend --no-edit
@@ -15,3 +15,13 @@
   colorMoved = zebra
 [init]
   defaultBranch = main
+[diff]
+  tool = difftastic
+[difftool]
+  prompt = false
+[difftool "difftastic"]
+  cmd = difft "$LOCAL" "$REMOTE"
+[pager]
+  difftool = true
+[alias]
+  dft = difftool
