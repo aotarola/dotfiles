@@ -1,6 +1,6 @@
 [user]
   name = Andres Otarola
-  email = aotarola@groupon.com
+  email = andres@otarola.me
 [core]
   editor = hx
   excludesfile = ~/.gitignore
