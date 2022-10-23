@@ -1,8 +1,29 @@
 export ZSH="$HOME/.oh-my-zsh"
 
-fpath+=$HOME/.zsh/pure
-ZSH_THEME=""
+export PATH="/opt/homebrew/bin:$PATH" # homebrew override
+
+export PATH="$(brew --prefix)/opt/openjdk/bin:$PATH" # setting a better jdk
+
+export PATH="$HOME/.cargo/bin:$PATH" # enable rust
+
+export PATH="$HOME/.local/bin:$PATH" # godly overrides from my home
+
+export PATH="/usr/local/sbin:$PATH"
+
+export PATH="$(brew --prefix)/sbin:$PATH"
+
+export PATH="$HOME/dev/grain/node_modules/.bin:$PATH"
+
+export DENO_INSTALL="$HOME/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+
+. $(brew --prefix)/opt/asdf/libexec/asdf.sh
+
+fpath+=("$(brew --prefix)/share/zsh/site-functions")
 autoload -U promptinit; promptinit
+
+ZSH_THEME=""
+
 prompt pure
 
 # ZSH Built-in plugins
@@ -25,7 +46,7 @@ source /opt/homebrew/opt/fzf/shell/completion.zsh
 
 # Aliases, AKA: expressing my laziness
 
-alias gd="git diff"
+alias gd="git dft"
 alias ga="git add ."
 alias gca="git commit -v -a"
 alias gc="git commit"
@@ -46,13 +67,15 @@ alias nt="npm t"
 alias nr="npm run"
 alias na="npm run assets"
 alias ng="npm init @grpn"
-alias b="brew"
 alias bi="brew install"
-alias k="kubectl"
 alias kx="kubectx"
 alias ks="kubens"
+alias b="brew"
+alias k="kubectl"
 alias v="lvim"
 alias h="hx"
+alias hc="hx ~/.config/helix"
+alias c="cargo"
 alias n="node"
 alias oldvim="vim"
 alias ta="tmux attach"
@@ -60,8 +83,6 @@ alias hh="history | fzf"
 alias ncf="npx nap --cloud deploy:configs"
 alias vim="v"
 alias vi="v"
-alias h="hx"
-alias hg="hx"
 alias s="source ~/.zshrc"
 alias t="h ~/.tmux.conf"
 alias z="h ~/.zshrc"
@@ -75,32 +96,3 @@ alias ccat="pygmentize -g"
 alias npv="node -v && npm -v"
 alias m="mutagen"
 alias llive="lamdera live"
-
-# PATH customization
-
-export PATH="$HOME/.cargo/bin:$PATH" # enable rust
-
-export PATH="/opt/homebrew/opt/openjdk/bin:$PATH" # setting a better jdk
-
-export PATH="$(pyenv root)/shims:/usr/local/bin:/usr/bin:/bin:$PATH"
-
-export PATH="$HOME/.local/bin:$PATH" # godly overrides from my home
-
-export PATH="/opt/homebrew/bin:$PATH" # homebrew override
-
-# Export env vars
-
-# eval "$(fnm env)"
-
-eval "$(rbenv init - zsh)"
-
-# . /usr/local/opt/asdf/libexec/asdf.sh
-export PATH="/usr/local/sbin:$PATH"
-export PATH="$(pyenv root)/shims:/usr/local/bin:/usr/bin:/bin:$PATH"
-
-. $(brew --prefix asdf)/libexec/asdf.sh
-
-. $(brew --prefix asdf)/etc/bash_completion.d/asdf.bash
-export PATH="/opt/homebrew/sbin:$PATH"
-
-export XDG_CONFIG_HOME=$HOME/.config

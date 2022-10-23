@@ -28,6 +28,6 @@ debug:
 hide_cursor_when_typing: true
 
 shell:
-  program: /bin/zsh
+  program: /opt/homebrew/bin/zsh
   args:
     - --login
