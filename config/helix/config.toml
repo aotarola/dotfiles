@@ -1,0 +1,45 @@
+theme = "catppuccin_mocha"
+
+[editor]
+color-modes = true
+cursorline = true
+line-number = "relative"
+mouse = false
+rulers = [80]
+
+[keys.normal]
+C-r = ":config-reload"
+ret = ":w"
+space = { c = ":bc" }
+X = "extend_line_above"
+Y = ":clipboard-yank"
+
+[keys.insert]
+down = "move_line_down"
+up = "move_line_up"
+left = "move_char_left"
+right = "move_char_right"
+
+[editor.lsp]
+display-messages = true
+
+[editor.file-picker]
+git-ignore = true
+hidden = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.statusline]
+center = ["file-name"]
+left = ["mode", "spinner"]
+right = [
+  "diagnostics",
+  "selections",
+  "position",
+  "file-encoding",
+  "file-line-ending",
+  "file-type",
+]

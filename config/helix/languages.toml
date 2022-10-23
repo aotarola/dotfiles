@@ -1,0 +1,266 @@
+# [[language]]
+# name   = "elm"
+# config = { elmLS.elmReviewDiagnostics = "error", elmLS.trace.server = "on", elmReviewDiagnostics = "error" }
+## LSP
+### vscode-eslint
+[language-server.vscode-eslint-lsp]
+args = ["--stdio"]
+command = "vscode-eslint-language-server"
+
+[language-server.vscode-eslint-lsp.config]
+format = true
+nodePath = ""
+onIgnoredFiles = "off"
+packageManager = "yarn"
+quiet = false
+rulesCustomizations = []
+run = "onType"
+useESLintClass = false
+validate = "on"
+
+[language-server.vscode-eslint-lsp.config.codeAction]
+
+[language-server.vscode-eslint-lsp.config.codeAction.disableRuleComment]
+enable = true
+location = "separateLine"
+
+[language-server.vscode-eslint-lsp.config.codeAction.showDocumentation]
+enable = true
+
+[language-server.vscode-eslint-lsp.config.codeActionOnSave]
+enable = true
+mode = "all"
+
+[language-server.vscode-eslint-lsp.config.workingDirectory]
+mode = "location"
+
+### C
+[language-server.c-lsp]
+command = "ccls"
+args = ["--log-file=/tmp/ccls.log", "-v=1"]
+
+### Typescript
+[language-server.typescript-lsp]
+command = "typescript-language-server"
+args = ["--stdio"]
+config = { provideFormatter = false, documentFormatting = false }
+
+### Typescript (Deno)
+[language-server.typescript-deno-lsp]
+command = "deno"
+args = ["lsp"]
+config = { lint = true, enable = true, unstable = true }
+
+### HTML
+[language-server.html-lsp]
+command = "vscode-html-language-server"
+args = ["--stdio"]
+
+### Markdown
+[language-server.markdown-lsp]
+command = "marksman"
+
+### Dockerfile
+[language-server.docker-lsp]
+command = "docker-langserver"
+args = ["--stdio"]
+
+[language-server.docker-lsp.config]
+docker = { languageserver = { formatter = { ignoreMultilineInstructions = false } } }
+
+### Python
+[language-server.python-lsp]
+args = ["--stdio"]
+command = "pyright-langserver"
+config = {  }
+
+### TOML
+[language-server.toml-lsp]
+args = ["lsp", "stdio"]
+command = "taplo"
+
+## Linter
+### Eslint
+[language-server.efm-eslint-linter]
+command = "efm-langserver"
+
+[language-server.efm-eslint-linter.config.languages]
+typescript = [
+  { lintCommand = "eslint_d -f unix --stdin --stdin-filename=${INPUT}", lintIgnoreExitCode = true, lintStdin = true }
+]
+typescriptreact = [
+  { lintCommand = "eslint_d -f unix --stdin --stdin-filename=${INPUT}", lintIgnoreExitCode = true, lintStdin = true }
+]
+javascript = [
+  { lintCommand = "eslint_d -f unix --stdin --stdin-filename=${INPUT}", lintIgnoreExitCode = true, lintStdin = true }
+]
+javascriptreact = [
+  { lintCommand = "eslint_d -f unix --stdin --stdin-filename=${INPUT}", lintIgnoreExitCode = true, lintStdin = true }
+]
+
+### json
+[language-server.json-linter]
+command = "efm-langserver"
+
+[language-server.json-linter.config.languages]
+json = [
+  { lintCommand = "jsonlint -c", lintIgnoreExitCode = true, lintStdin = true, prefix = "jsonlint", lint-formats = [
+    "line %l, col%c, found: %m"
+  ] }
+]
+
+### Markdown
+[language-server.markdown-linter]
+command = "efm-langserver"
+
+[language-server.markdown-linter.config]
+languages = { markdown = [
+  { lintCommand = 'markdownlint --stdin', lintIgnoreExitCode = true, lintStdin = true },
+] }
+
+### Dockerfile
+[language-server.hadolint-linter]
+command = "efm-langserver"
+
+[language-server.hadolint-linter.config]
+languages = { dockerfile = { lintCommand = 'hadolint --no-color --ignore DL3018 --ignore DL3008 -', lintStdin = true, lintIgnoreExitCode = true, lintFormats = [
+  "%f:%l %m"
+] } }
+
+## Formatters
+[language-server.efm-eslint-formatter]
+command = "efm-langserver"
+
+[language-server.efm-eslint-formatter.config]
+documentFormatting = true
+
+[language-server.efm-eslint-formatter.config.languages]
+typescript = [
+  { formatCommand = 'eslint_d --stdin --fix-to-stdout --stdin-filename=${INPUT}', formatStdin = true }
+]
+typescriptreact = [
+  { formatCommand = 'eslint_d --stdin --fix-to-stdout --stdin-filename=${INPUT}', formatStdin = true }
+]
+javascript = [
+  { formatCommand = 'eslint_d --stdin --fix-to-stdout --stdin-filename=${INPUT}', formatStdin = true }
+]
+javascriptreact = [
+  { formatCommand = 'eslint_d --stdin --fix-to-stdout --stdin-filename=${INPUT}', formatStdin = true }
+]
+
+### Markdown
+[language-server.markdown-formatter]
+command = "efm-langserver"
+documentFormatting = true
+
+[language-server.markdown-formatter.config]
+documentFormatting = true
+languages = { markdown = [
+  { formatCommand = 'prettier --parser markdown', formatStdin = true },
+] }
+
+### TOML
+[language-server.toml-formatter]
+command = "efm-langserver"
+
+[language-server.toml-formatter.config]
+documentFormatting = true
+languages = { toml = [
+  { formatCommand = 'prettier --parser toml', formatStdin = true },
+] }
+
+### Python
+[language-server.python-formatter]
+command = "efm-langserver"
+
+[language-server.python-formatter.config]
+documentFormatting = true
+languages = { python = [
+  { formatCommand = 'black --quiet -', formatStdin = true },
+] }
+
+### HTML
+[language-server.html-formatter]
+command = "efm-langserver"
+
+[language-server.html-formatter.config]
+documentFormatting = true
+languages = { html = [
+  { formatCommand = 'prettier --parser html', formatStdin = true },
+] }
+
+## Languages
+[[language]]
+name = "dockerfile"
+auto-format = true
+language-servers = [
+  { name = "docker-lsp", except-features = ["diagnostics"] },
+  { name = "hadolint-linter", only-features = ["diagnostics"] },
+]
+
+# [[language]]
+# name = "typescript"
+# auto-format = true
+# language-servers = [
+#   "efm-eslint-formatter",
+#   "vscode-eslint-lsp",
+#   "typescript-language-server"
+# ]
+[[language]]
+name = "typescript"
+auto-format = true
+language-servers = ["typescript-deno-lsp"]
+
+[[language]]
+name = "javascript"
+auto-format = true
+language-servers = ["typescript-deno-lsp"]
+
+[[language]]
+name = "markdown"
+auto-format = true
+file-types = ["md"]
+indent = { tab-width = 2, unit = "  " }
+injection-regex = "md|markdown"
+language-servers = [
+  { name = "markdown-lsp", except-features = ["format"] },
+  { name = "markdown-formatter", only-features = ["format"] },
+  { name = "markdown-linter", only-features = ["diagnostics"] },
+]
+roots = [".marksman.toml"]
+scope = "source.md"
+
+[[language]]
+name = "toml"
+auto-format = true
+language-servers = [
+  { name = "toml-lsp", except-features = ["format"] },
+  { name = "toml-formatter", only-features = ["format"] },
+]
+
+[[language]]
+name = "python"
+auto-format = true
+language-servers = [
+  { name = "python-lsp", except-features = ["format"] },
+  { name = "python-formatter", only-features = ["format"] }
+]
+
+[[language]]
+name = "json"
+language-servers = [
+  { name = "json-linter", only-features = ["diagnostics"] },
+  "vscode-json-language-server"
+]
+
+[[language]]
+name = "html"
+language-servers = [
+  { name = "html-lsp", except-features = ["format"] },
+  { name = "html-formatter", only-features = ["format"] }
+]
+
+[[language]]
+name = "c"
+file-types = ["c"]
+language-servers = ["c-lsp"]
